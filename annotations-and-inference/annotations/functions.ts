@@ -30,3 +30,16 @@ function divide(a: number, b: number): number {
 const multiply = function (num1: number, num2: number): number {
   return num1 * num2;
 };
+
+// a function that has a return type of void can
+// return null or undefined
+const logger = (message: string): void => {
+  console.log(message);
+};
+
+// `never` means that we are never going to reach the end of
+// this function, we will exit the function early without
+// returning any value
+const throwErrror = (message: string): never => {
+  throw new Error(message);
+};
