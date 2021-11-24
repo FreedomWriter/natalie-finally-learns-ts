@@ -65,5 +65,17 @@ const couldReachEndOfFunction = (message: string): void => {
     if (!message) {
         throw new Error('no message')
     }
-
 }
+
+// destructuring with annotations
+
+const todaysWeather = {
+    date: new Date(),
+    weather: "too cold"
+}
+                    //destructuring     annotating
+const logWeather = ({date, weather}: {date: Date, weather: string}): void => {
+    console.log(`On ${date}, the weather will be ${weather}`)
+}
+
+logWeather(todaysWeather)
