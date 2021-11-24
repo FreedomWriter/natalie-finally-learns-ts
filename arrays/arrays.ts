@@ -31,6 +31,6 @@ carMakers.map((car: string): string => {
 
 // Flexible types
 // inferred
-const importantDates = [new Date, "2030-10-10"]
+const importantDates = [new Date(), "2030-10-10"]
 // annotated
 const annotatedImportantDates: (string | Date)[] = []
