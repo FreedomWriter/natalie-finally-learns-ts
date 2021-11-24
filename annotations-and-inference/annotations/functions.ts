@@ -43,3 +43,15 @@ const logger = (message: string): void => {
 const throwErrror = (message: string): never => {
   throw new Error(message);
 };
+
+// we only annotate with `never` when we truly expect a function to
+// never return anything, if there is a possibilty of a return value,
+// we annotate with that return values type
+
+const notANeverType = (message: string): string => {
+    if (!message) {
+        throw new Error('no message')
+    }
+
+    return message
+}
