@@ -45,13 +45,25 @@ const throwErrror = (message: string): never => {
 };
 
 // we only annotate with `never` when we truly expect a function to
-// never return anything, if there is a possibilty of a return value,
+// never return anything AND we won't reach the end of the function
+// if there is a possibilty of a return value,
 // we annotate with that return values type
 
-const notANeverType = (message: string): string => {
+const couldReturnSomething = (message: string): string => {
     if (!message) {
         throw new Error('no message')
     }
 
     return message
+}
+
+
+// if there is a chance that we could reach the end of the fuction
+// we annotate with `void`
+
+const couldReachEndOfFunction = (message: string): void => {
+    if (!message) {
+        throw new Error('no message')
+    }
+
 }
