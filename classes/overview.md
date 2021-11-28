@@ -15,5 +15,4 @@ Modifiers:
 
 Some notes:
 
-- when overriding a method in a child class, we cannot change the modifier
-  the parent class assigned that method
+- when overriding a method in a child class, we cannot change the modifier of the parent class assigned that method
