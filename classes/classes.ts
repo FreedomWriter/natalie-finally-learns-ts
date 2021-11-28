@@ -1,37 +1,50 @@
 /**
  * ts has some additions to the way it handles classes
  * 
- * Modifiers:
- *  public - can be called anywhere, anytime - default
- *  private - can only be called by `other methods` in `this` class
- *  protected - can be called by other methods in `this` class OR other methods in child classes
- * 
- * Some notes:
- * - when overriding a method in a child class, we cannot change the modifier
- *   the parent class assigned that method
+
  */
 
 class Vehichle {
 
-    public honk():void {
+    // color: string
+    // constructor(color: string) {
+    //     this.color = color || "red";
+    // }
+    // shorthand of above:
+    // we could also declare it `private` or `protected`, but the rules
+    // of those modifiers would then apply, regarding access
+    constructor(public color: string) {}
+
+    protected honk():void {
         console.log("beep beep")
     }
 }
 
 class Car extends Vehichle {
+    // we don't modify color (with `public`, `private`, or `protected`)
+    // because we aren't reassigning, or creating a new field, `color`
+    // belongs to vehicle
+    constructor(public wheels: number, color: string) {
+        super(color);
+    }
     private drive(): void {
         console.log("car goes vroom vroom")
     }
 
     startDrivingProccess(): void {
-        return this.drive()
+        this.drive()
+        this.honk()
     }
 }
 
-const car = new Car();
-
-// uncomment to see the error
-// car.drive();
+const car = new Car(4, 'creamsicle orange');
 car.startDrivingProccess()
-car.honk();
+console.log(car)
 
+// uncomment to see the error (because `drive` is `private`)
+// car.drive();
+// uncomment to see the error (because `honk` is `protected`)
+// car.honk();
+
+const vehicle = new Vehichle('champagne papi')
+console.log(vehicle.color)

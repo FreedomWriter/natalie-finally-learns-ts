@@ -4,9 +4,7 @@
 
 A class is a `blueprint` to create an object with different values and methods to represent something
 
-## TS Class extras
-
-Modifiers:
+### Modifiers:
 
     - public - can be called anywhere, anytime - default
     - private - can only be called by `other methods` in `this` class
@@ -16,3 +14,5 @@ Modifiers:
 Some notes:
 
 - when overriding a method in a child class, we cannot change the modifier of the parent class assigned that method
+
+## Why
